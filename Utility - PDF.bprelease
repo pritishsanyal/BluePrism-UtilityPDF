@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bpr:release xmlns:bpr="http://www.blueprism.co.uk/product/release">
+    <bpr:name>Utility - PDF</bpr:name>
+    <bpr:release-notes>Import the release directly to your Blue Prism. Place the iTextSharp.dll &amp; BouncyCastle.Crypto.dll from the repository to Blue Prism installation library path.
+
+Default Blue Prism Download Path : "C:\Program Files\Blue Prism Limited\Blue Prism Automate"</bpr:release-notes>
+    <bpr:created>2021-07-30 22:36:08Z</bpr:created>
+    <bpr:package-id>-1</bpr:package-id>
+    <bpr:package-name>&lt;Adhoc Package&gt;</bpr:package-name>
+    <bpr:user-created-by>admin</bpr:user-created-by>
+    <bpr:contents count="2">
+        <object id="20fd768a-9804-4140-92d0-84a2668ab1d4" name="Utility - PDF" xmlns="http://www.blueprism.co.uk/product/process"><process name="Utility - PDF" version="1.0" bpversion="6.10.2.42081" narrative="Basic Actions to perform headless PDF functionalities like read, write &amp; merge.&#xD;&#xA;&#xD;&#xA;@author Pritish Sanyal" byrefcollection="true" type="object" runmode="Exclusive"><appdef><element name="Application Root"><id>c9cc2a33-d413-40c2-9ee6-e14955e40cac</id><type>Application</type><basetype>Application</basetype><datatype>unknown</datatype><diagnose>False</diagnose></element></appdef><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view><preconditions><condition narrative="Need iTextSharp dll in the project directory" /><condition narrative="Need BouncyCastle.Crypto dll in the project directory" /></preconditions><endpoint narrative="" /><subsheet subsheetid="ecce8752-1f8e-452b-af59-73a95857930b" type="CleanUp" published="True"><name>Clean Up</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="82e7ee5a-8130-46b3-9790-c8526c0de5ab" type="Normal" published="True"><name>Get Page Count</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="ad5db5a3-db40-4aaa-ad71-9144443313b5" type="Normal" published="True"><name>Get Text</name><view><camerax>21</camerax><cameray>46</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="22db69fa-a1ad-4b1f-acdb-977e60d1f138" type="Normal" published="True"><name>Get Text by Pages</name><view><camerax>0</camerax><cameray>63</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="c7b39dc7-b399-4a97-96fc-75c3380aaadf" type="Normal" published="True"><name>Merge PDF</name><view><camerax>0</camerax><cameray>71</cameray><zoom version="2">1.25</zoom></view></subsheet><stage stageid="022e1f67-809a-43e6-814c-ae9ed0dff895" name="Start" type="Start"><loginhibit /><display x="15" y="-180" /><onsuccess>146dd4fc-b6ad-4a6a-910a-7f1975deb798</onsuccess></stage><stage stageid="146dd4fc-b6ad-4a6a-910a-7f1975deb798" name="End" type="End"><loginhibit /><display x="15" y="135" /></stage><stage stageid="906553c1-bfa4-421a-aae0-1e09d1e851d8" name="Stage1" type="ProcessInfo"><display x="-180" y="-150" w="180" h="120" /><references><reference>System.dll</reference><reference>System.Data.dll</reference><reference>System.Xml.dll</reference><reference>System.Drawing.dll</reference><reference>itextsharp.dll</reference><reference>BouncyCastle.Crypto.dll</reference></references><imports><import>System</import><import>System.Drawing</import><import>System.Data</import><import>System.Text</import><import>System.Text.RegularExpressions</import><import>System.IO</import><import>iTextSharp.text.pdf.parser</import><import>iTextSharp.text.pdf</import><import>iTextSharp.text</import></imports><language>visualbasic</language><globalcode><![CDATA[]]></globalcode><code><![CDATA[]]></code></stage><stage stageid="a2bb028e-0c22-46e5-8627-65d33f6c6f8c" name="Clean Up" type="SubSheetInfo"><subsheetid>ecce8752-1f8e-452b-af59-73a95857930b</subsheetid><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="21e0fe17-38dc-41bd-a032-2bcd1a2e5d52" name="Start" type="Start"><subsheetid>ecce8752-1f8e-452b-af59-73a95857930b</subsheetid><loginhibit /><display x="15" y="-105" /><onsuccess>5a13ebc2-4707-4ee3-8947-560765709e52</onsuccess></stage><stage stageid="5a13ebc2-4707-4ee3-8947-560765709e52" name="End" type="End"><subsheetid>ecce8752-1f8e-452b-af59-73a95857930b</subsheetid><loginhibit /><display x="15" y="90" /></stage><stage stageid="f83c5047-a8dd-4958-9147-1eb66cb17407" name="Get Text" type="SubSheetInfo"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><narrative>Read the entire PDF to extract text and send as output.</narrative><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="d9ac56dd-182e-4147-ba6b-e1cca9578a55" name="Start" type="Start"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-15" y="-120" /><inputs><input type="text" name="PDF File Path" narrative="Complete file path for PDF file" stage="FilePath" /></inputs><onsuccess>70124d22-7940-40ad-80d8-3d0c2f343811</onsuccess></stage><stage stageid="fbf2a805-89a4-40a2-90c1-ac52548870cb" name="End" type="End"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-15" y="195" /><outputs><output type="text" name="PDF Text" narrative="PDF Text extracted from input PDF file" stage="OutText" /></outputs></stage><stage stageid="212221d8-af44-4f47-8641-a1edbfbd84aa" name="" type="Note"><subsheetid>ecce8752-1f8e-452b-af59-73a95857930b</subsheetid><narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative><display x="-180" y="60" w="180" h="230" /></stage><stage stageid="8f5c6db2-367f-4b56-b40a-d98e54c0510d" name="" type="Note"><narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative><display x="-180" y="45" w="180" h="230" /></stage><stage stageid="240fbda3-1cf1-41b2-ae08-eb2512bd7dc3" name="Global Timeout (XXS)" type="Data"><loginhibit /><display x="210" y="-135" w="150" h="30" /><datatype>number</datatype><initialvalue>0.5</initialvalue><alwaysinit /></stage><stage stageid="335d5ec9-1398-4c93-9ece-a78c22b70c1d" name="Global Timeouts" type="Block"><loginhibit /><display x="105" y="-195" w="210" h="360" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="dbf994c6-3bb0-4f8b-ab49-abc1874024b7" name="Global Timeout (XS)" type="Data"><loginhibit /><display x="210" y="-90" w="150" h="30" /><datatype>number</datatype><initialvalue>1</initialvalue><alwaysinit /></stage><stage stageid="bc374459-3822-41e5-aae9-138aead54004" name="Global Timeout (S)" type="Data"><loginhibit /><display x="210" y="-45" w="150" h="30" /><datatype>number</datatype><initialvalue>5</initialvalue><alwaysinit /></stage><stage stageid="69ba5e6e-8d51-44c4-932d-2fd749c23a6d" name="Global Timeout (M)" type="Data"><loginhibit /><display x="210" y="0" w="150" h="30" /><datatype>number</datatype><initialvalue>10</initialvalue><alwaysinit /></stage><stage stageid="bcd6591a-2bda-4398-8a13-123c28aefdc1" name="Global Timeout (L)" type="Data"><loginhibit /><display x="210" y="45" w="150" h="30" /><datatype>number</datatype><initialvalue>30</initialvalue><alwaysinit /></stage><stage stageid="c2e6a440-4719-45ea-9175-3cd13bbd3f8c" name="Global Timeout (XL)" type="Data"><loginhibit /><display x="210" y="90" w="150" h="30" /><datatype>number</datatype><initialvalue>60</initialvalue><alwaysinit /></stage><stage stageid="021ff2cd-e914-424a-b70d-87a15c929933" name="Global Timeout (XXL)" type="Data"><loginhibit /><display x="210" y="135" w="150" h="30" /><datatype>number</datatype><initialvalue>120</initialvalue><alwaysinit /></stage><stage stageid="56a09f3e-b7c8-4de9-825f-a898fa3909c9" name="FilePath" type="Data"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-195" y="0" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="b0cb321b-3f5f-48fa-b1ed-8415c82094f5" name="Input" type="Block"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-270" y="-45" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="7a9a51b3-1090-4ff3-aaee-c7e5e759fe64" name="Output" type="Block"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-270" y="135" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="50e261d6-532a-4821-ac1d-cd9d63629631" name="OutText" type="Data"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-195" y="180" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="9bce9711-aeca-4ed6-a866-79eb61550c69" name="Get PDF Text" type="Code"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-15" y="120" /><inputs><input type="text" name="FilePath" expr="[FilePath]" /></inputs><outputs><output type="text" name="OutText" stage="OutText" /></outputs><onsuccess>fbf2a805-89a4-40a2-90c1-ac52548870cb</onsuccess><code><![CDATA['Load the PDF File Path
+Dim pr As New PdfReader(FilePath)
+
+'Get Number of Pages
+Dim pageCount As Integer = 0
+	pageCount = pr.NumberOfPages
+
+'Get PDF text
+Dim its As ITextExtractionStrategy
+	its = New LocationTextExtractionStrategy
+
+Dim s As String = ""
+
+For i = 1 To pageCount
+	s &= PdfTextExtractor.GetTextFromPage(pr, i, its)
+Next
+
+'Get Output Text
+OutText = s]]></code></stage><stage stageid="70124d22-7940-40ad-80d8-3d0c2f343811" name="Check File Path Exists?" type="Decision"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-15" y="-60" /><decision expression="[FilePath] &lt;&gt; &quot;&quot;" /><ontrue>0256f9a5-5b1e-4547-88e7-b0a338e6aa1a</ontrue><onfalse>8f5446d9-e741-4e1d-b605-fdc4f689aff3</onfalse></stage><stage stageid="0256f9a5-5b1e-4547-88e7-b0a338e6aa1a" name="Check File Exists?" type="Action"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit onsuccess="true" /><display x="-15" y="0" /><inputs><input type="text" name="File Name" friendlyname="File Name" narrative="The name of the file to check" expr="[FilePath]" /></inputs><outputs><output type="flag" name="Exists" friendlyname="Exists" narrative="True if the file exists" stage="Exists" /></outputs><onsuccess>86a396fe-1761-4741-ae0f-9629b6e04944</onsuccess><resource object="Utility - File Management" action="File Exists" /></stage><stage stageid="3634fa26-a2bf-4555-aa62-218cec92ed69" name="Exists" type="Data"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><display x="-195" y="90" w="120" h="30" /><datatype>flag</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="3f2177b9-8bf4-4bae-ac6f-809c8922d88d" name="Runtime" type="Block"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-270" y="45" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="86a396fe-1761-4741-ae0f-9629b6e04944" name="Check File Path Exists?" type="Decision"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><loginhibit /><display x="-15" y="60" /><decision expression="[Exists]" /><ontrue>9bce9711-aeca-4ed6-a866-79eb61550c69</ontrue><onfalse>1003e036-4b06-4a40-8d83-c1dc4c1cb896</onfalse></stage><stage stageid="8f5446d9-e741-4e1d-b605-fdc4f689aff3" name="File Path not Present" type="Exception"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><display x="90" y="-60" /><exception localized="yes" type="Invalid Input Parameter" detail="&quot;File path for PDF file nor provided&quot;" /></stage><stage stageid="1003e036-4b06-4a40-8d83-c1dc4c1cb896" name="File Not Found" type="Exception"><subsheetid>ad5db5a3-db40-4aaa-ad71-9144443313b5</subsheetid><display x="90" y="60" /><exception localized="yes" type="File Not Found" detail="&quot;PDF file not present in the provided File Path&quot;" /></stage><stage stageid="58222a94-26a1-419d-a80e-a1114d21c0b8" name="Get Text by Pages" type="SubSheetInfo"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><narrative>Reads the entire PDF file and extracts page wise text in output collection.</narrative><display x="-255" y="-105" w="150" h="90" /></stage><stage stageid="fb934186-b150-4774-94a0-c0bfeb6a3802" name="End" type="End"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="75" y="255" /><outputs><output type="collection" name="Page Text Collection" narrative="Output collection containing the page wise text of the input PDF file" stage="PageTextCol" /></outputs></stage><stage stageid="7aaf67fb-80c6-4c25-a1de-f3af36f5f418" name="Get Page Count" type="SubSheetInfo"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><narrative>Gets the total page countof the input PDF file and returns the total number of pages.</narrative><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="c0655d87-c023-47aa-80f0-e5ab50140c64" name="FilePath" type="Data"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="-195" y="0" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="3b6639ea-9bb8-4401-8d33-d2b1f723ce71" name="Input" type="Block"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="-270" y="-45" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="46eda924-601a-4945-b56c-21e44d5b6509" name="Output" type="Block"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="-270" y="135" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="e85d8a5a-aa5d-4810-b9ed-1146c56af49f" name="OutPageCount" type="Data"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="-195" y="180" w="120" h="30" /><datatype>number</datatype><initialvalue>0</initialvalue><private /><alwaysinit /></stage><stage stageid="fd3b5cae-6513-4f18-bd59-06926b9567d0" name="Get Page Count" type="Code"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="0" y="120" /><inputs><input type="text" name="FilePath" expr="[FilePath]" /></inputs><outputs><output type="number" name="OutPageCount" stage="OutPageCount" /></outputs><onsuccess>d252a4aa-66e3-49b7-8ba0-2c9b5e96ae4a</onsuccess><code><![CDATA['Load the PDF File Path
+Dim pr As New PdfReader(FilePath)
+
+'Get Number of Pages
+Dim pageCount As Integer = 0
+	pageCount = pr.NumberOfPages
+
+'Get Output Page Count
+OutPageCount = pageCount]]></code></stage><stage stageid="cdac0780-6192-4012-9e27-a37646be0b7e" name="Check File Path Exists?" type="Decision"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="0" y="-60" /><decision expression="[FilePath] &lt;&gt; &quot;&quot;" /><ontrue>f3021574-5889-4a52-8a3f-0e248bce1ab5</ontrue><onfalse>77ea4dbe-797d-40f9-9eb2-ddec4890bf97</onfalse></stage><stage stageid="f3021574-5889-4a52-8a3f-0e248bce1ab5" name="Check File Exists?" type="Action"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit onsuccess="true" /><display x="0" y="0" /><inputs><input type="text" name="File Name" friendlyname="File Name" narrative="The name of the file to check" expr="[FilePath]" /></inputs><outputs><output type="flag" name="Exists" friendlyname="Exists" narrative="True if the file exists" stage="Exists" /></outputs><onsuccess>bfa8e79e-8266-4705-9a88-ea39daf7eac1</onsuccess><resource object="Utility - File Management" action="File Exists" /></stage><stage stageid="bfa8e79e-8266-4705-9a88-ea39daf7eac1" name="Check File Path Exists?" type="Decision"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="0" y="60" /><decision expression="[Exists]" /><ontrue>fd3b5cae-6513-4f18-bd59-06926b9567d0</ontrue><onfalse>f2bcacbf-3a9a-4ab4-ac06-a1d7703491e7</onfalse></stage><stage stageid="77ea4dbe-797d-40f9-9eb2-ddec4890bf97" name="File Path not Present" type="Exception"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><display x="105" y="-60" /><exception localized="yes" type="Invalid Input Parameter" detail="&quot;File path for PDF file nor provided&quot;" /></stage><stage stageid="f2bcacbf-3a9a-4ab4-ac06-a1d7703491e7" name="File Not Found" type="Exception"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><display x="105" y="60" /><exception localized="yes" type="File Not Found" detail="&quot;PDF file not present in the provided File Path&quot;" /></stage><stage stageid="f06321af-3105-4c02-aac5-12cc9206e4b4" name="Exists" type="Data"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><display x="-195" y="90" w="120" h="30" /><datatype>flag</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="6688de9b-46f6-45a8-a97f-33d7d1392a84" name="Runtime" type="Block"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="-270" y="45" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="52aed242-fd55-43bc-8a35-cceae335e31c" name="Start" type="Start"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="0" y="-135" /><inputs><input type="text" name="PDF File Path" narrative="Complete file path for PDF file" stage="FilePath" /></inputs><onsuccess>cdac0780-6192-4012-9e27-a37646be0b7e</onsuccess></stage><stage stageid="d252a4aa-66e3-49b7-8ba0-2c9b5e96ae4a" name="End" type="End"><subsheetid>82e7ee5a-8130-46b3-9790-c8526c0de5ab</subsheetid><loginhibit /><display x="0" y="195" /><outputs><output type="number" name="Total Page Count" narrative="PDF Page Count extracted from input PDF file" stage="OutPageCount" /></outputs></stage><stage stageid="20200454-7301-4c85-ad99-7b611c2683e7" name="Start" type="Start"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-30" y="-135" /><inputs><input type="text" name="PDF File Path" narrative="Complete file path for PDF file" stage="FilePath" /><input type="text" name="PDF Page Numbers" narrative="Specific Page Numbers (semicolon separated) for which text needs to be extracted. Leave blank for all pages" stage="PageIndexes" /></inputs><onsuccess>5ea63a2e-3315-4948-86e3-88dbb8e27563</onsuccess></stage><stage stageid="a56c76d5-fc36-448c-9cfe-609a8b414c18" name="FilePath" type="Data"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-255" y="0" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="68bee6a3-e1b4-45c9-a244-6492bc8693d8" name="Input" type="Block"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-330" y="-45" w="150" h="105" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="e6fc4121-d36a-48f6-a732-51daa35223a9" name="Output" type="Block"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-330" y="195" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="d6bd14c2-b669-45c5-b38e-da23ca7c61dc" name="Runtime" type="Block"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-330" y="75" w="150" h="105" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="949b5a83-ffc3-4060-8989-f3b93e32497a" name="PageIndexes" type="Data"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><display x="-255" y="30" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="e192c6ed-e60a-4665-8b18-69e7c0fc1c70" name="Page Index Provided?" type="Decision"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-30" y="120" /><decision expression="Trim([PageIndexes]) &lt;&gt; &quot;&quot;" /><ontrue>05ad8aa4-9055-4342-a697-afb88a057fbc</ontrue><onfalse>f603bedb-f37d-472b-9f60-bebf2289464d</onfalse></stage><stage stageid="05ad8aa4-9055-4342-a697-afb88a057fbc" name="Split Page Indexes" type="Action"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit onsuccess="true" /><display x="75" y="120" /><inputs><input type="text" name="Text to Split" friendlyname="Text to Split" narrative="The text to split" expr="[PageIndexes]" /><input type="text" name="Split Char" friendlyname="Split Char" narrative="The split delimiter" expr="&quot;;&quot;" /><input type="text" name="Collection Field Name" friendlyname="Collection Field Name" narrative="The name of the field for the resulting collection" expr="&quot;PageIndex&quot;" /></inputs><outputs><output type="collection" name="Split Values" friendlyname="Split Values" narrative="The resulting collection containing the split values" stage="Split Values" /></outputs><onsuccess>80b23949-6a1c-427c-9ce3-82581ef53f14</onsuccess><resource object="Utility - Strings" action="Split Text" /></stage><stage stageid="8ca8ecd1-4e64-4e8c-a1d0-b63e64ea4f3a" name="Split Values" type="Collection"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><display x="-255" y="150" w="120" h="30" /><datatype>collection</datatype><private /><alwaysinit /></stage><stage stageid="c1463035-cf69-4c8d-b21c-34d14246353d" name="PageTextCol" type="Collection"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-255" y="240" w="120" h="30" /><datatype>collection</datatype><private /><alwaysinit /><collectioninfo><field name="PageIndex" type="number" description="Page Index for which text is extracted" /><field name="PageText" type="text" description="Page Text" /></collectioninfo></stage><stage stageid="80b23949-6a1c-427c-9ce3-82581ef53f14" name="Get Selected Page Text" type="Code"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="75" y="180" /><inputs><input type="text" name="FilePath" expr="[FilePath]" /><input type="collection" name="PageIndexes" expr="[Split Values]" /></inputs><outputs><output type="collection" name="PageTextCol" stage="PageTextCol" /></outputs><onsuccess>fb934186-b150-4774-94a0-c0bfeb6a3802</onsuccess><code><![CDATA['Load the PDF File Path
+Dim pr As New PdfReader(FilePath)
+
+'Get Number of Pages'
+Dim pageCount As Integer = 0
+	pageCount = pr.NumberOfPages
+
+'Initialize Data Table
+Dim s As String = ""
+Dim dt As New DataTable
+	dt.Columns.AddRange(New DataColumn(1) {New DataColumn("PageIndex"), New DataColumn("PageText")})
+
+'Sort Page Indexes
+	PageIndexes.DefaultView.Sort = "PageIndex ASC"
+	PageIndexes = PageIndexes.DefaultView.ToTable
+
+
+'Extract PDF Text Page Wise
+Dim its As ITextExtractionStrategy
+	its = New LocationTextExtractionStrategy
+
+For Each row  As DataRow In PageIndexes.Rows
+	If (row("PageIndex") > pageCount) Then
+	
+		dt.Rows.Add(row("PageIndex"), "Error : Page Index Outside Boundary")
+
+	Else
+	
+		s = PdfTextExtractor.GetTextFromPage(pr, row("PageIndex"), its)
+		dt.Rows.Add(row("PageIndex"), s)
+	
+	End If
+Next
+
+
+'Get Output TextCol
+PageTextCol = dt]]></code></stage><stage stageid="f603bedb-f37d-472b-9f60-bebf2289464d" name="Get All Page Text" type="Code"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-30" y="180" /><inputs><input type="text" name="FilePath" expr="[FilePath]" /></inputs><outputs><output type="collection" name="PageTextCol" stage="PageTextCol" /></outputs><onsuccess>ae73c4fe-4f28-464b-b45c-704eff943448</onsuccess><code><![CDATA['Load the PDF File Path
+Dim pr As New PdfReader(FilePath)
+
+'Get Number of Pages'
+Dim pageCount As Integer = 0
+	pageCount = pr.NumberOfPages
+
+'Initialize Data Table
+Dim s As String = ""
+Dim dt As New DataTable
+	dt.Columns.AddRange(New DataColumn(1) {New DataColumn("PageIndex"), New DataColumn("PageText")})
+
+
+'Extract PDF Text Page Wise
+Dim its As ITextExtractionStrategy
+	its = New LocationTextExtractionStrategy
+
+For i = 1 To pageCount
+
+	s = PdfTextExtractor.GetTextFromPage(pr, i, its)
+	dt.Rows.Add(i, s)
+	
+Next
+
+
+'Get Output TextCol
+PageTextCol = dt]]></code></stage><stage stageid="ae73c4fe-4f28-464b-b45c-704eff943448" name="End" type="End"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-30" y="255" /><outputs><output type="collection" name="Page Text Collection" narrative="Output collection containing the page wise text of the input PDF file" stage="PageTextCol" /></outputs></stage><stage stageid="5ea63a2e-3315-4948-86e3-88dbb8e27563" name="Check File Path Exists?" type="Decision"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-30" y="-75" /><decision expression="[FilePath] &lt;&gt; &quot;&quot;" /><ontrue>623f683c-2392-42a8-adfd-c92605acb28a</ontrue><onfalse>1c0a5791-c914-46b4-8965-7821bc52c509</onfalse></stage><stage stageid="623f683c-2392-42a8-adfd-c92605acb28a" name="Check File Exists?" type="Action"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit onsuccess="true" /><display x="-30" y="-15" /><inputs><input type="text" name="File Name" friendlyname="File Name" narrative="The name of the file to check" expr="[FilePath]" /></inputs><outputs><output type="flag" name="Exists" friendlyname="Exists" narrative="True if the file exists" stage="Exists" /></outputs><onsuccess>f339713f-00e0-4937-95c4-7827a536ffed</onsuccess><resource object="Utility - File Management" action="File Exists" /></stage><stage stageid="f339713f-00e0-4937-95c4-7827a536ffed" name="Check File Path Exists?" type="Decision"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><loginhibit /><display x="-30" y="45" /><decision expression="[Exists]" /><ontrue>e192c6ed-e60a-4665-8b18-69e7c0fc1c70</ontrue><onfalse>e55adbd3-307d-4cdb-90fe-38bb3a7553e8</onfalse></stage><stage stageid="1c0a5791-c914-46b4-8965-7821bc52c509" name="File Path not Present" type="Exception"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><display x="75" y="-75" /><exception localized="yes" type="Invalid Input Parameter" detail="&quot;File path for PDF file nor provided&quot;" /></stage><stage stageid="e55adbd3-307d-4cdb-90fe-38bb3a7553e8" name="File Not Found" type="Exception"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><display x="75" y="45" /><exception localized="yes" type="File Not Found" detail="&quot;PDF file not present in the provided File Path&quot;" /></stage><stage stageid="da9804ec-b3bc-4edb-84cc-104e02195811" name="Exists" type="Data"><subsheetid>22db69fa-a1ad-4b1f-acdb-977e60d1f138</subsheetid><display x="-255" y="120" w="120" h="30" /><datatype>flag</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="d7d118d3-4de6-41c8-8764-d1c1c19dd669" name="Merge PDF" type="SubSheetInfo"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><narrative>Takes Input file path for 2 PDF files and merges them to a single PDF.</narrative><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="e55fe53d-c8ac-4f45-b291-6290180ac8cc" name="Start" type="Start"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="30" y="-135" /><inputs><input type="text" name="File Path" narrative="File path the first PDF to which PDF needs to be merged" stage="PDF1" /><input type="text" name="File to Merge" narrative="File path for second PDF file, which needs to be merged" stage="PDF2" /><input type="text" name="Output File Path" narrative="Output file path, to be created for the merged PDF" stage="OutputPDF" /></inputs><onsuccess>c5b631f6-b424-421e-a700-9f2d3a79582e</onsuccess></stage><stage stageid="284662a3-df1c-40a2-b3c6-48b6e1f2c56e" name="End" type="End"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="30" y="255" /><outputs><output type="flag" name="Success" narrative="Success Flag to ensure file merge was successful" stage="Success" /></outputs></stage><stage stageid="066197bc-b3c9-4919-841c-75e10c5470d8" name="PDF1" type="Data"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="-195" y="0" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="2c54328f-0a9c-4492-96dd-09f21f77a04f" name="Input" type="Block"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="-270" y="-45" w="150" h="135" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="4eea771d-6ebc-4f59-876c-fabae3ae194b" name="Output" type="Block"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="-270" y="195" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="7d33b83c-e842-4936-be7d-c28a82265e7f" name="Exists" type="Data"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><display x="-195" y="150" w="120" h="30" /><datatype>flag</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="3372722f-7ede-450c-a611-c9d72e91173d" name="Runtime" type="Block"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="-270" y="105" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="7FB2E5" /></stage><stage stageid="7ea0caf6-e12d-468b-b0ae-77c6e2bf2e81" name="PDF2" type="Data"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="-195" y="30" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="24764ead-f92f-4934-8550-31c3db979b02" name="OutputPDF" type="Data"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="-195" y="60" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="c5b631f6-b424-421e-a700-9f2d3a79582e" name="Check File Path Exists?" type="Decision"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="30" y="-75" /><decision expression="[PDF1] &lt;&gt; &quot;&quot; AND [PDF2] &lt;&gt; &quot;&quot;" /><ontrue>1776ff47-18ab-40e2-82ef-398ad0714ff1</ontrue><onfalse>9273ca88-39cb-4745-b99f-5231e6652dbb</onfalse></stage><stage stageid="1776ff47-18ab-40e2-82ef-398ad0714ff1" name="Check File Exists?" type="Action"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit onsuccess="true" /><display x="30" y="-15" /><inputs><input type="text" name="File Name" friendlyname="File Name" narrative="The name of the file to check" expr="[PDF1]" /></inputs><outputs><output type="flag" name="Exists" friendlyname="Exists" narrative="True if the file exists" stage="Exists" /></outputs><onsuccess>490a8451-2dcf-40b3-9180-46d4ce93271a</onsuccess><resource object="Utility - File Management" action="File Exists" /></stage><stage stageid="490a8451-2dcf-40b3-9180-46d4ce93271a" name="Check File Path Exists?" type="Decision"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="30" y="30" /><decision expression="[Exists]" /><ontrue>36bc2e61-6012-47f5-98bf-dda81cb78726</ontrue><onfalse>c7ae4d7d-4b12-444b-9d1f-6def17ca1b30</onfalse></stage><stage stageid="9273ca88-39cb-4745-b99f-5231e6652dbb" name="File Path not Present" type="Exception"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><display x="135" y="-75" /><exception localized="yes" type="Invalid Input Parameter" detail="&quot;File path for PDF file nor provided&quot;" /></stage><stage stageid="c7ae4d7d-4b12-444b-9d1f-6def17ca1b30" name="File Not Found" type="Exception"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><display x="135" y="30" /><exception localized="yes" type="File Not Found" detail="&quot;PDF file not present in the provided File Path&quot;" /></stage><stage stageid="36bc2e61-6012-47f5-98bf-dda81cb78726" name="Check File Exists?" type="Action"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit onsuccess="true" /><display x="30" y="90" /><inputs><input type="text" name="File Name" friendlyname="File Name" narrative="The name of the file to check" expr="[PDF2]" /></inputs><outputs><output type="flag" name="Exists" friendlyname="Exists" narrative="True if the file exists" stage="Exists" /></outputs><onsuccess>b9666a07-1954-4041-a55b-cc4ca5c93d01</onsuccess><resource object="Utility - File Management" action="File Exists" /></stage><stage stageid="b9666a07-1954-4041-a55b-cc4ca5c93d01" name="Check File Path Exists?" type="Decision"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit /><display x="30" y="135" /><decision expression="[Exists]" /><ontrue>f97145c8-30d9-489b-b39f-58d236ab1890</ontrue><onfalse>4a2a9ec9-3037-4830-9ba8-c97cf5c82809</onfalse></stage><stage stageid="4a2a9ec9-3037-4830-9ba8-c97cf5c82809" name="File Not Found" type="Exception"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><display x="135" y="135" /><exception localized="yes" type="File Not Found" detail="&quot;PDF file not present in the provided File Path&quot;" /></stage><stage stageid="f97145c8-30d9-489b-b39f-58d236ab1890" name="Merge PDF" type="Code"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><loginhibit onsuccess="true" /><display x="30" y="195" /><inputs><input type="text" name="pdf_1" expr="[PDF1]" /><input type="text" name="pdf_2" expr="[PDF2]" /><input type="text" name="pdf_out" expr="[OutputPDF]" /></inputs><outputs><output type="flag" name="result" stage="Success" /></outputs><onsuccess>284662a3-df1c-40a2-b3c6-48b6e1f2c56e</onsuccess><code><![CDATA[Dim pdfCount As Integer = 0
+Dim f As Integer = 0
+Dim fileName As String
+Dim reader As iTextSharp.text.pdf.PdfReader = Nothing
+Dim pageCount As Integer = 0
+Dim pdfDoc As iTextSharp.text.Document = Nothing
+Dim writer As PdfWriter = Nothing
+Dim cb As PdfContentByte = Nothing
+
+Dim page As PdfImportedPage = Nothing
+Dim rotation As Integer = 0
+
+Try
+
+'Open the first PDF File
+	fileName = pdf_1
+	reader = New iTextSharp.text.pdf.PdfReader(fileName)
+
+'Get page count
+	pageCount = reader.NumberOfPages
+	pdfDoc = New iTextSharp.text.Document(reader.GetPageSizeWithRotation(1), 18, 18, 18, 18)
+	writer = PdfWriter.GetInstance(pdfDoc, New FileStream(pdf_out, FileMode.OpenOrCreate))
+
+With pdfDoc
+	.Open()
+End With
+
+'Instantiate a PdfContentByte Object
+	cb = writer.DirectContent
+
+'Loop though the input PDFs
+Dim i As Integer = 0
+
+While i < pageCount
+
+	i += 1
+
+'Get the input page size
+	pdfDoc.SetPageSize(reader.GetPageSizeWithRotation(i))
+
+'Create a new page on the output document
+	pdfDoc.NewPage()
+
+'Add bookmark to the first page and get the imported page
+
+	page = writer.GetImportedPage(reader, i)
+
+'Read the imported page rotation
+	rotation = reader.GetPageRotation(i)
+
+'Add the imported page to the PdfContentByte object as a template based on the page's rotation
+	If rotation = 90 Then
+
+		cb.AddTemplate(page, 0, -1.0F, 1.0F, 0, 0, reader.GetPageSizeWithRotation(i).Height)
+
+	ElseIf rotation = 270 Then
+
+		cb.AddTemplate(page, 0, 1.0F, -1.0F, 0, reader.GetPageSizeWithRotation(i).Width + 60, -30)
+
+	Else cb.AddTemplate(page, 1.0F, 0, 0, 1.0F, 0, 0)
+
+	End If
+
+End While 
+
+'Read second PDF File
+	fileName = pdf_2
+	reader = New iTextSharp.text.pdf.PdfReader(fileName)
+	pageCount = reader.NumberOfPages 
+
+'Declare a page counter variable
+	i = 0
+
+'Loop through the current input pdf's pages starting at page 1
+While i < pageCount
+	i += 1
+
+'Get the input page size
+	pdfDoc.SetPageSize(reader.GetPageSizeWithRotation(i))
+
+'If first page, add bookmarks to the page and get the imported page
+	page = writer.GetImportedPage(reader, i)
+
+'Read the imported page's rotation
+	rotation = reader.GetPageRotation(i)
+
+'Then add the imported page to the PdfContentByte object as a template based on the page's rotation
+	If rotation = 90 Then
+
+		cb.AddTemplate(page, 0, -1.0F, 1.0F, 0, 0, reader.GetPageSizeWithRotation(i).Height)
+
+	ElseIf rotation = 270 Then
+
+		cb.AddTemplate(page, 0, 1.0F, -1.0F, 0, reader.GetPageSizeWithRotation(i).Width + 60, -30)
+
+	Else
+
+		cb.AddTemplate(page, 1.0F, 0, 0, 1.0F, 0, 0)
+
+	End If
+
+End While 
+
+'When all done, we close the document so that the pdfwriter object can write it to the output file
+	pdfDoc.Close()
+	result = True
+
+Catch ex As Exception
+	result = False
+
+End Try]]></code></stage><stage stageid="6d5cc60a-53d8-4020-acba-2e7abfa2a282" name="Success" type="Data"><subsheetid>c7b39dc7-b399-4a97-96fc-75c3380aaadf</subsheetid><display x="-195" y="240" w="120" h="30" /><datatype>flag</datatype><initialvalue>False</initialvalue><private /><alwaysinit /></stage></process></object>
+        <object-group id="2bf6be87-2ef6-42ae-86fd-0183f238161a" name="IPA Project - Utility" isDefaultGroup="False" xmlns="http://www.blueprism.co.uk/product/object-group">
+            <members>
+                <object id="20fd768a-9804-4140-92d0-84a2668ab1d4" />
+            </members>
+        </object-group>
+    </bpr:contents>
+</bpr:release>
